@@ -58,7 +58,7 @@ kubectl get ingress
 ```
 kubectl delete ingress.networking.k8s.io/backend
 kubectl delete service/backend
-# TODO: See about deleteing A2.3 controller
+kubectl delete all  --all -n ingress-nginx
 kubectl delete deployment/backend
 kind delete cluster --name kind-1
 ```
