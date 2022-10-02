@@ -11,17 +11,16 @@ docker ps
 kubectl get nodes
 kubectl cluster-info
 ```
-## Task A2.2: Deploy your A1 Docker image as Deployment
+## Task A2.2: Deploy A1 Docker image as Deployment
 ```
-docker build -t otot-a1-nodeserver:latest ./app
-kind load docker-image --name kind-1 otot-a1-nodeserver:latest
+docker build -t nighogg-datatype-cs3244/otot-a1-nodeserver:latest ./app
+kind load docker-image --name kind-1 nighogg-datatype-cs3244/otot-a1-nodeserver:latest
 kubectl apply -f k8s\manifests\A1_deployment.yml
 ```
 ### Verify A2.2
 ```
 kubectl get deployment/backend --watch
 ```
-//TODO: Figure out why this doesn't work. For some reason 'READY' status is stuck at 0/3
 
 ## Task A2.3 Deploy Ingres 
 #TODO: finish this
