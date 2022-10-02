@@ -46,10 +46,17 @@ kubectl get svc
 
 ### Ingress
 
-//TODO:
+```
+kubectl apply -f k8s\manifests\ingress.yml
+```
+*Verify*
+```
+kubectl get ingress
+```
 
 ## Teardown:
 ```
+kubectl delete ingress.networking.k8s.io/backend
 kubectl delete service/backend
 # TODO: See about deleteing A2.3 controller
 kubectl delete deployment/backend
