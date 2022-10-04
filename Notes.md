@@ -53,6 +53,7 @@ kubectl apply -f k8s\manifests\ingress.yml
 ```
 kubectl get ingress
 ```
+//TODO: Figure out how to get the animations working again.
 
 ## Teardown:
 ```
