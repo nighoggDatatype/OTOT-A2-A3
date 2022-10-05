@@ -5,12 +5,12 @@ metadata:
   labels:
     app: backend
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1 
+    nginx.ingress.kubernetes.io/rewrite-target: /$2 
 spec:
   rules:
     - http:
         paths:
-          - path: /app
+          - path: /app(/|$)(.*)
             pathType: Prefix
             backend:
               service:

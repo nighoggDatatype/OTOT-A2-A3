@@ -18,6 +18,9 @@ docker build -t nighogg-datatype-cs3244/otot-a1-nodeserver:latest ./app
 kind load docker-image --name kind-1 nighogg-datatype-cs3244/otot-a1-nodeserver:latest
 kubectl apply -f k8s\manifests\A1_deployment.yml
 ```
+
+//Note: Changes to A1 image was done minimally for resources that actually existed.
+
 ### Verify A2.2
 ```
 kubectl get deployment/backend --watch
@@ -53,7 +56,8 @@ kubectl apply -f k8s\manifests\ingress.yml
 ```
 kubectl get ingress
 ```
-//TODO: Figure out how to get the animations working again.
+
+//Note: Changes to ingress is based on https://github.com/kubernetes/ingress-nginx/blob/main/docs/examples/rewrite/README.md
 
 ## Teardown:
 ```
