@@ -1,5 +1,8 @@
 # Notes on commands used:
+These commands listed in this file are specifically for windows command line
+
 TODO: Use the notes here for final report
+
 TODO: In the verify steps, describe the 'ready' state
 
 ## Task A2.1: Deploy cluster
