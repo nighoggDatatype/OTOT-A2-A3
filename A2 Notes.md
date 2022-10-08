@@ -63,10 +63,15 @@ kubectl get ingress
 //Note: Changes to ingress is based on https://github.com/kubernetes/ingress-nginx/blob/main/docs/examples/rewrite/README.md
 
 ## Teardown:
+Teardown below is everything above in reverse order:
 ```
 kubectl delete ingress.networking.k8s.io/backend
 kubectl delete service/backend
 kubectl delete all  --all -n ingress-nginx
 kubectl delete deployment/backend
+kind delete cluster --name kind-1
+```
+Minimal teardown of everything is as follows:
+```
 kind delete cluster --name kind-1
 ```
