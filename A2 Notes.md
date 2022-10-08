@@ -19,7 +19,7 @@ kubectl cluster-info
 ```
 docker build -t nighogg-datatype-cs3244/otot-a1-nodeserver:latest ./app
 kind load docker-image --name kind-1 nighogg-datatype-cs3244/otot-a1-nodeserver:latest
-kubectl apply -f k8s\manifests\A1_deployment.yml
+kubectl apply -f k8s\manifests\k8s\A1_deployment.yml
 ```
 
 //Note: Changes to A1 image was done minimally for resources that actually existed.
@@ -43,7 +43,7 @@ kubectl -n ingress-nginx get deploy -w
 ### Service
 
 ```
-kubectl apply -f k8s\manifests\service.yml
+kubectl apply -f k8s\manifests\k8s\service.yml
 ```
 *Verify*
 ```
@@ -53,7 +53,7 @@ kubectl get svc
 ### Ingress
 
 ```
-kubectl apply -f k8s\manifests\ingress.yml
+kubectl apply -f k8s\manifests\k8s\ingress.yml
 ```
 *Verify*
 ```

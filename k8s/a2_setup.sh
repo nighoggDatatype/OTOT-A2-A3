@@ -8,7 +8,7 @@ kind create cluster --name kind-1 --config k8s/kind/cluster-config.yaml
 # Deploy docker image
 docker build -t nighogg-datatype-cs3244/otot-a1-nodeserver:latest ./app
 kind load docker-image --name kind-1 nighogg-datatype-cs3244/otot-a1-nodeserver:latest
-kubectl apply -f "k8s/manifests/A1_deployment.yml"
+kubectl apply -f "k8s/manifests/k8s/A1_deployment.yml"
 
 # Deploy Controller
 kubectl apply -f "https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml"
@@ -17,7 +17,7 @@ kubectl apply -f "https://raw.githubusercontent.com/kubernetes/ingress-nginx/mai
 until kubectl -n ingress-nginx get deploy | grep -m 1 "1/1"; do sleep 3 ; done
 
 # Deploy Service
-kubectl apply -f "k8s/manifests/service.yml"
+kubectl apply -f "k8s/manifests/k8s/service.yml"
 
 # Deploy ingress
-kubectl apply -f "k8s/manifests/ingress.yml"
+kubectl apply -f "k8s/manifests/k8s/ingress.yml"
