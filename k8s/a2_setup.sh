@@ -1,7 +1,3 @@
-#TODO: Fill this in with commands, and test this somehow. 
-#      Either by having cmd directly interpret sh or installing stuff on the linux subsystem
-
-
 # Create Cluster
 kind create cluster --name kind-1 --config k8s/kind/cluster-config.yaml
 
