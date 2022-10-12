@@ -27,9 +27,14 @@ kubectl describe hpa
 ```
 ## Task A3.2
 ```
-kubectl apply -f "k8s/manifests/k8s/backend-deployment-zone-aware.yaml"
+kubectl apply -f "k8s/manifests/k8s/A1-deployment-zone-aware.yaml"
 ```
-//TODO: Figure out commands to verify
+### Verify A2.2
+```
+kubectl get deployment/backend-zone-aware --watch
+kubectl get po -lapp=backend-zone-aware --watch
+```
+
 
 ## Teardown:
 Minimal teardown of everything is as follows:

@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
         - name: backend
-          image: nginx:latest
+          image: nighogg-datatype-cs3244/otot-a1-nodeserver:latest
+          imagePullPolicy: Never #Avoid hang on impossible image pull
           ports:
             - name: http
               containerPort: 8080
