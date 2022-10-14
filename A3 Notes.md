@@ -25,6 +25,10 @@ View hpa and result of load test:
 ```
 kubectl describe hpa
 ```
+View raw pods:
+```
+kubectl get po
+```
 
 ## Task A3.2: Deploy zone-aware Deployment
 ```
@@ -35,13 +39,15 @@ To better see the zone aware nature of this deployment, kill the old deployment 
 ```
 kubectl delete deployment/backend
 ```
-TODO: Check whether this delete operation has the desired effect
 
 ### Verify A2.2
 ```
 kubectl get po -lapp=backend-zone-aware -owide --sort-by='.spec.nodeName'
 ```
-//TODO: Test this verification
+View Zone Aware propery, to be used in conjunction with the first command:
+```
+kubectl get nodes -L topology.kubernetes.io/zone
+```
 
 ## Teardown:
 Minimal teardown of everything is as follows:
