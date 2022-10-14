@@ -25,16 +25,23 @@ View hpa and result of load test:
 ```
 kubectl describe hpa
 ```
-## Task A3.2
+
+## Task A3.2: Deploy zone-aware Deployment
 ```
 kubectl apply -f "k8s/manifests/k8s/A1-deployment-zone-aware.yaml"
 ```
+
+To better see the zone aware nature of this deployment, kill the old deployment with this command:
+```
+kubectl delete deployment/backend
+```
+TODO: Check whether this delete operation has the desired effect
+
 ### Verify A2.2
 ```
-kubectl get deployment/backend-zone-aware --watch
-kubectl get po -lapp=backend-zone-aware --watch
+kubectl get po -lapp=backend-zone-aware -owide --sort-by='.spec.nodeName'
 ```
-
+//TODO: Test this verification
 
 ## Teardown:
 Minimal teardown of everything is as follows:
