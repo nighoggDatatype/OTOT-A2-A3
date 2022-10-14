@@ -18,14 +18,17 @@ kubectl apply -f "k8s/manifests/k8s/service.yml"
 # Deploy ingress
 kubectl apply -f "k8s/manifests/k8s/ingress.yml"
 
+# -------------------
+# End A2 and Begin A3
+# -------------------
+
 # Metrics server
 # Modified from https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 #  to include the arg `--kubelet-insecure-tls` at `deployment.spec.containers[].args[]`
 # This means we don't need to edit a deployment live
 kubectl apply -f "k8s/manifests/k8s/metric-server.yaml" 
 
-# Wait for metrics-server to be fully setup
-# TODO: Check whether this works later
+# Wait for metrics-server to be fully setup, just to be safe
 until kubectl -n kube-system get deploy | grep -m 1 "1/1"; do sleep 3 ; done
 
 # Horizontal Pod Autoscalar
